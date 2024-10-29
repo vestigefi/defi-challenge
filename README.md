@@ -40,4 +40,4 @@ Extra points will be awarded if additional trading strategies, such as **Dollar 
 4. **User Experience**: The system should offer simple, intuitive interactions. Although a UI is not required due to time constraints, including one will result in extra points. A **Command-Line Interface (CLI)** is sufficient, provided the commands are well documented in this README.
 5. **Test Net Proof of Concept**: The system should be deployed on a testnet, with participants encouraged to deploy ASA/ASA pools to demonstrate the system's intended functionality.
 
-**SUBMISSIONS SHOULD BE A PR FOR THIS REPO***
+**SUBMISSIONS SHOULD BE A PR FOR THIS REPO**
