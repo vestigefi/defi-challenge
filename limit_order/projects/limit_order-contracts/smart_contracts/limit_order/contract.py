@@ -7,7 +7,7 @@ class LimitOrder(ARC4Contract):
     limitPrice: UInt64
     orderAmount: UInt64
     expiryTime: UInt64
-    isActive: Bool
+    isActive: bool
 
     @abimethod(allow_actions=["NoOp"], create="require")
     def createApplication(self, assetID: Asset, limitPrice: UInt64, orderAmount: UInt64, expiryTime: UInt64) -> None:

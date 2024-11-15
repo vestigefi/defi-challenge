@@ -1,0 +1,189 @@
+#pragma version 10
+
+smart_contracts.limit_order.contract.LimitOrder.approval_program:
+    intcblock 0 1
+    bytecblock "isActive" "limitPrice" "expiryTime" "assetID" "orderAmount"
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.limit_order.contract.LimitOrder.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___after_if_else@9
+    pushbytess 0xf4548ab2 0xbd3605c8 0x11734f27 0xdfac7146 // method "createApplication(asset,uint64,uint64,uint64)void", method "executeOrder(uint64)void", method "cancelOrder()void", method "updateOrder(uint64,uint64)void"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___createApplication_route@2 __puya_arc4_router___executeOrder_route@3 __puya_arc4_router___cancelOrder_route@4 __puya_arc4_router___updateOrder_route@5
+    intc_0 // 0
+    retsub
+
+__puya_arc4_router___createApplication_route@2:
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    txna ApplicationArgs 1
+    btoi
+    txnas Assets
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    callsub createApplication
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___executeOrder_route@3:
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    txna ApplicationArgs 1
+    btoi
+    callsub executeOrder
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___cancelOrder_route@4:
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub cancelOrder
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___updateOrder_route@5:
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    callsub updateOrder
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___after_if_else@9:
+    intc_0 // 0
+    retsub
+
+
+// smart_contracts.limit_order.contract.LimitOrder.createApplication(assetID: uint64, limitPrice: uint64, orderAmount: uint64, expiryTime: uint64) -> void:
+createApplication:
+    proto 4 0
+    frame_dig -3
+    assert // Limit price must be positive
+    frame_dig -1
+    global LatestTimestamp
+    >
+    assert // Expiry must be in the future
+    bytec_3 // "assetID"
+    frame_dig -4
+    app_global_put
+    bytec_1 // "limitPrice"
+    frame_dig -3
+    app_global_put
+    bytec 4 // "orderAmount"
+    frame_dig -2
+    app_global_put
+    bytec_2 // "expiryTime"
+    frame_dig -1
+    app_global_put
+    bytec_0 // "isActive"
+    intc_1 // 1
+    app_global_put
+    retsub
+
+
+// smart_contracts.limit_order.contract.LimitOrder.executeOrder(currentPrice: uint64) -> void:
+executeOrder:
+    proto 1 0
+    intc_0 // 0
+    bytec_0 // "isActive"
+    app_global_get_ex
+    assert // check self.isActive exists
+    assert // Order is inactive
+    intc_0 // 0
+    bytec_1 // "limitPrice"
+    app_global_get_ex
+    assert // check self.limitPrice exists
+    frame_dig -1
+    <=
+    assert // Current price is below the limit price
+    global LatestTimestamp
+    intc_0 // 0
+    bytec_2 // "expiryTime"
+    app_global_get_ex
+    assert // check self.expiryTime exists
+    <=
+    assert // Order has expired
+    itxn_begin
+    intc_0 // 0
+    bytec_3 // "assetID"
+    app_global_get_ex
+    assert // check self.assetID exists
+    txn Sender
+    intc_0 // 0
+    bytec 4 // "orderAmount"
+    app_global_get_ex
+    assert // check self.orderAmount exists
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    bytec_0 // "isActive"
+    intc_0 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts.limit_order.contract.LimitOrder.cancelOrder() -> void:
+cancelOrder:
+    proto 0 0
+    intc_0 // 0
+    bytec_0 // "isActive"
+    app_global_get_ex
+    assert // check self.isActive exists
+    assert // Order is already inactive
+    bytec_0 // "isActive"
+    intc_0 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts.limit_order.contract.LimitOrder.updateOrder(newLimitPrice: uint64, newExpiryTime: uint64) -> void:
+updateOrder:
+    proto 2 0
+    intc_0 // 0
+    bytec_0 // "isActive"
+    app_global_get_ex
+    assert // check self.isActive exists
+    assert // Cannot update an inactive order
+    frame_dig -2
+    assert // Limit price must be positive
+    frame_dig -1
+    global LatestTimestamp
+    >
+    assert // Expiry must be in the future
+    bytec_1 // "limitPrice"
+    frame_dig -2
+    app_global_put
+    bytec_2 // "expiryTime"
+    frame_dig -1
+    app_global_put
+    retsub

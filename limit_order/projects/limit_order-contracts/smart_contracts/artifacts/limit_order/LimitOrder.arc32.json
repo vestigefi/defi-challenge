@@ -1,0 +1,143 @@
+{
+    "hints": {
+        "createApplication(asset,uint64,uint64,uint64)void": {
+            "call_config": {
+                "no_op": "CREATE"
+            }
+        },
+        "executeOrder(uint64)void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "cancelOrder()void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "updateOrder(uint64,uint64)void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDEwCgpzbWFydF9jb250cmFjdHMubGltaXRfb3JkZXIuY29udHJhY3QuTGltaXRPcmRlci5hcHByb3ZhbF9wcm9ncmFtOgogICAgaW50Y2Jsb2NrIDAgMQogICAgYnl0ZWNibG9jayAiaXNBY3RpdmUiICJsaW1pdFByaWNlIiAiZXhwaXJ5VGltZSIgImFzc2V0SUQiICJvcmRlckFtb3VudCIKICAgIGNhbGxzdWIgX19wdXlhX2FyYzRfcm91dGVyX18KICAgIHJldHVybgoKCi8vIHNtYXJ0X2NvbnRyYWN0cy5saW1pdF9vcmRlci5jb250cmFjdC5MaW1pdE9yZGVyLl9fcHV5YV9hcmM0X3JvdXRlcl9fKCkgLT4gdWludDY0OgpfX3B1eWFfYXJjNF9yb3V0ZXJfXzoKICAgIHByb3RvIDAgMQogICAgdHhuIE51bUFwcEFyZ3MKICAgIGJ6IF9fcHV5YV9hcmM0X3JvdXRlcl9fX2FmdGVyX2lmX2Vsc2VAOQogICAgcHVzaGJ5dGVzcyAweGY0NTQ4YWIyIDB4YmQzNjA1YzggMHgxMTczNGYyNyAweGRmYWM3MTQ2IC8vIG1ldGhvZCAiY3JlYXRlQXBwbGljYXRpb24oYXNzZXQsdWludDY0LHVpbnQ2NCx1aW50NjQpdm9pZCIsIG1ldGhvZCAiZXhlY3V0ZU9yZGVyKHVpbnQ2NCl2b2lkIiwgbWV0aG9kICJjYW5jZWxPcmRlcigpdm9pZCIsIG1ldGhvZCAidXBkYXRlT3JkZXIodWludDY0LHVpbnQ2NCl2b2lkIgogICAgdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMAogICAgbWF0Y2ggX19wdXlhX2FyYzRfcm91dGVyX19fY3JlYXRlQXBwbGljYXRpb25fcm91dGVAMiBfX3B1eWFfYXJjNF9yb3V0ZXJfX19leGVjdXRlT3JkZXJfcm91dGVAMyBfX3B1eWFfYXJjNF9yb3V0ZXJfX19jYW5jZWxPcmRlcl9yb3V0ZUA0IF9fcHV5YV9hcmM0X3JvdXRlcl9fX3VwZGF0ZU9yZGVyX3JvdXRlQDUKICAgIGludGNfMCAvLyAwCiAgICByZXRzdWIKCl9fcHV5YV9hcmM0X3JvdXRlcl9fX2NyZWF0ZUFwcGxpY2F0aW9uX3JvdXRlQDI6CiAgICB0eG4gT25Db21wbGV0aW9uCiAgICAhCiAgICBhc3NlcnQgLy8gT25Db21wbGV0aW9uIGlzIG5vdCBOb09wCiAgICB0eG4gQXBwbGljYXRpb25JRAogICAgIQogICAgYXNzZXJ0IC8vIGNhbiBvbmx5IGNhbGwgd2hlbiBjcmVhdGluZwogICAgdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQogICAgYnRvaQogICAgdHhuYXMgQXNzZXRzCiAgICB0eG5hIEFwcGxpY2F0aW9uQXJncyAyCiAgICBidG9pCiAgICB0eG5hIEFwcGxpY2F0aW9uQXJncyAzCiAgICBidG9pCiAgICB0eG5hIEFwcGxpY2F0aW9uQXJncyA0CiAgICBidG9pCiAgICBjYWxsc3ViIGNyZWF0ZUFwcGxpY2F0aW9uCiAgICBpbnRjXzEgLy8gMQogICAgcmV0c3ViCgpfX3B1eWFfYXJjNF9yb3V0ZXJfX19leGVjdXRlT3JkZXJfcm91dGVAMzoKICAgIHR4biBPbkNvbXBsZXRpb24KICAgICEKICAgIGFzc2VydCAvLyBPbkNvbXBsZXRpb24gaXMgbm90IE5vT3AKICAgIHR4biBBcHBsaWNhdGlvbklECiAgICBhc3NlcnQgLy8gY2FuIG9ubHkgY2FsbCB3aGVuIG5vdCBjcmVhdGluZwogICAgdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQogICAgYnRvaQogICAgY2FsbHN1YiBleGVjdXRlT3JkZXIKICAgIGludGNfMSAvLyAxCiAgICByZXRzdWIKCl9fcHV5YV9hcmM0X3JvdXRlcl9fX2NhbmNlbE9yZGVyX3JvdXRlQDQ6CiAgICB0eG4gT25Db21wbGV0aW9uCiAgICAhCiAgICBhc3NlcnQgLy8gT25Db21wbGV0aW9uIGlzIG5vdCBOb09wCiAgICB0eG4gQXBwbGljYXRpb25JRAogICAgYXNzZXJ0IC8vIGNhbiBvbmx5IGNhbGwgd2hlbiBub3QgY3JlYXRpbmcKICAgIGNhbGxzdWIgY2FuY2VsT3JkZXIKICAgIGludGNfMSAvLyAxCiAgICByZXRzdWIKCl9fcHV5YV9hcmM0X3JvdXRlcl9fX3VwZGF0ZU9yZGVyX3JvdXRlQDU6CiAgICB0eG4gT25Db21wbGV0aW9uCiAgICAhCiAgICBhc3NlcnQgLy8gT25Db21wbGV0aW9uIGlzIG5vdCBOb09wCiAgICB0eG4gQXBwbGljYXRpb25JRAogICAgYXNzZXJ0IC8vIGNhbiBvbmx5IGNhbGwgd2hlbiBub3QgY3JlYXRpbmcKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDEKICAgIGJ0b2kKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDIKICAgIGJ0b2kKICAgIGNhbGxzdWIgdXBkYXRlT3JkZXIKICAgIGludGNfMSAvLyAxCiAgICByZXRzdWIKCl9fcHV5YV9hcmM0X3JvdXRlcl9fX2FmdGVyX2lmX2Vsc2VAOToKICAgIGludGNfMCAvLyAwCiAgICByZXRzdWIKCgovLyBzbWFydF9jb250cmFjdHMubGltaXRfb3JkZXIuY29udHJhY3QuTGltaXRPcmRlci5jcmVhdGVBcHBsaWNhdGlvbihhc3NldElEOiB1aW50NjQsIGxpbWl0UHJpY2U6IHVpbnQ2NCwgb3JkZXJBbW91bnQ6IHVpbnQ2NCwgZXhwaXJ5VGltZTogdWludDY0KSAtPiB2b2lkOgpjcmVhdGVBcHBsaWNhdGlvbjoKICAgIHByb3RvIDQgMAogICAgZnJhbWVfZGlnIC0zCiAgICBhc3NlcnQgLy8gTGltaXQgcHJpY2UgbXVzdCBiZSBwb3NpdGl2ZQogICAgZnJhbWVfZGlnIC0xCiAgICBnbG9iYWwgTGF0ZXN0VGltZXN0YW1wCiAgICA+CiAgICBhc3NlcnQgLy8gRXhwaXJ5IG11c3QgYmUgaW4gdGhlIGZ1dHVyZQogICAgYnl0ZWNfMyAvLyAiYXNzZXRJRCIKICAgIGZyYW1lX2RpZyAtNAogICAgYXBwX2dsb2JhbF9wdXQKICAgIGJ5dGVjXzEgLy8gImxpbWl0UHJpY2UiCiAgICBmcmFtZV9kaWcgLTMKICAgIGFwcF9nbG9iYWxfcHV0CiAgICBieXRlYyA0IC8vICJvcmRlckFtb3VudCIKICAgIGZyYW1lX2RpZyAtMgogICAgYXBwX2dsb2JhbF9wdXQKICAgIGJ5dGVjXzIgLy8gImV4cGlyeVRpbWUiCiAgICBmcmFtZV9kaWcgLTEKICAgIGFwcF9nbG9iYWxfcHV0CiAgICBieXRlY18wIC8vICJpc0FjdGl2ZSIKICAgIGludGNfMSAvLyAxCiAgICBhcHBfZ2xvYmFsX3B1dAogICAgcmV0c3ViCgoKLy8gc21hcnRfY29udHJhY3RzLmxpbWl0X29yZGVyLmNvbnRyYWN0LkxpbWl0T3JkZXIuZXhlY3V0ZU9yZGVyKGN1cnJlbnRQcmljZTogdWludDY0KSAtPiB2b2lkOgpleGVjdXRlT3JkZXI6CiAgICBwcm90byAxIDAKICAgIGludGNfMCAvLyAwCiAgICBieXRlY18wIC8vICJpc0FjdGl2ZSIKICAgIGFwcF9nbG9iYWxfZ2V0X2V4CiAgICBhc3NlcnQgLy8gY2hlY2sgc2VsZi5pc0FjdGl2ZSBleGlzdHMKICAgIGFzc2VydCAvLyBPcmRlciBpcyBpbmFjdGl2ZQogICAgaW50Y18wIC8vIDAKICAgIGJ5dGVjXzEgLy8gImxpbWl0UHJpY2UiCiAgICBhcHBfZ2xvYmFsX2dldF9leAogICAgYXNzZXJ0IC8vIGNoZWNrIHNlbGYubGltaXRQcmljZSBleGlzdHMKICAgIGZyYW1lX2RpZyAtMQogICAgPD0KICAgIGFzc2VydCAvLyBDdXJyZW50IHByaWNlIGlzIGJlbG93IHRoZSBsaW1pdCBwcmljZQogICAgZ2xvYmFsIExhdGVzdFRpbWVzdGFtcAogICAgaW50Y18wIC8vIDAKICAgIGJ5dGVjXzIgLy8gImV4cGlyeVRpbWUiCiAgICBhcHBfZ2xvYmFsX2dldF9leAogICAgYXNzZXJ0IC8vIGNoZWNrIHNlbGYuZXhwaXJ5VGltZSBleGlzdHMKICAgIDw9CiAgICBhc3NlcnQgLy8gT3JkZXIgaGFzIGV4cGlyZWQKICAgIGl0eG5fYmVnaW4KICAgIGludGNfMCAvLyAwCiAgICBieXRlY18zIC8vICJhc3NldElEIgogICAgYXBwX2dsb2JhbF9nZXRfZXgKICAgIGFzc2VydCAvLyBjaGVjayBzZWxmLmFzc2V0SUQgZXhpc3RzCiAgICB0eG4gU2VuZGVyCiAgICBpbnRjXzAgLy8gMAogICAgYnl0ZWMgNCAvLyAib3JkZXJBbW91bnQiCiAgICBhcHBfZ2xvYmFsX2dldF9leAogICAgYXNzZXJ0IC8vIGNoZWNrIHNlbGYub3JkZXJBbW91bnQgZXhpc3RzCiAgICBpdHhuX2ZpZWxkIEFzc2V0QW1vdW50CiAgICBpdHhuX2ZpZWxkIEFzc2V0UmVjZWl2ZXIKICAgIGl0eG5fZmllbGQgWGZlckFzc2V0CiAgICBwdXNoaW50IDQgLy8gYXhmZXIKICAgIGl0eG5fZmllbGQgVHlwZUVudW0KICAgIGludGNfMCAvLyAwCiAgICBpdHhuX2ZpZWxkIEZlZQogICAgaXR4bl9zdWJtaXQKICAgIGJ5dGVjXzAgLy8gImlzQWN0aXZlIgogICAgaW50Y18wIC8vIDAKICAgIGFwcF9nbG9iYWxfcHV0CiAgICByZXRzdWIKCgovLyBzbWFydF9jb250cmFjdHMubGltaXRfb3JkZXIuY29udHJhY3QuTGltaXRPcmRlci5jYW5jZWxPcmRlcigpIC0+IHZvaWQ6CmNhbmNlbE9yZGVyOgogICAgcHJvdG8gMCAwCiAgICBpbnRjXzAgLy8gMAogICAgYnl0ZWNfMCAvLyAiaXNBY3RpdmUiCiAgICBhcHBfZ2xvYmFsX2dldF9leAogICAgYXNzZXJ0IC8vIGNoZWNrIHNlbGYuaXNBY3RpdmUgZXhpc3RzCiAgICBhc3NlcnQgLy8gT3JkZXIgaXMgYWxyZWFkeSBpbmFjdGl2ZQogICAgYnl0ZWNfMCAvLyAiaXNBY3RpdmUiCiAgICBpbnRjXzAgLy8gMAogICAgYXBwX2dsb2JhbF9wdXQKICAgIHJldHN1YgoKCi8vIHNtYXJ0X2NvbnRyYWN0cy5saW1pdF9vcmRlci5jb250cmFjdC5MaW1pdE9yZGVyLnVwZGF0ZU9yZGVyKG5ld0xpbWl0UHJpY2U6IHVpbnQ2NCwgbmV3RXhwaXJ5VGltZTogdWludDY0KSAtPiB2b2lkOgp1cGRhdGVPcmRlcjoKICAgIHByb3RvIDIgMAogICAgaW50Y18wIC8vIDAKICAgIGJ5dGVjXzAgLy8gImlzQWN0aXZlIgogICAgYXBwX2dsb2JhbF9nZXRfZXgKICAgIGFzc2VydCAvLyBjaGVjayBzZWxmLmlzQWN0aXZlIGV4aXN0cwogICAgYXNzZXJ0IC8vIENhbm5vdCB1cGRhdGUgYW4gaW5hY3RpdmUgb3JkZXIKICAgIGZyYW1lX2RpZyAtMgogICAgYXNzZXJ0IC8vIExpbWl0IHByaWNlIG11c3QgYmUgcG9zaXRpdmUKICAgIGZyYW1lX2RpZyAtMQogICAgZ2xvYmFsIExhdGVzdFRpbWVzdGFtcAogICAgPgogICAgYXNzZXJ0IC8vIEV4cGlyeSBtdXN0IGJlIGluIHRoZSBmdXR1cmUKICAgIGJ5dGVjXzEgLy8gImxpbWl0UHJpY2UiCiAgICBmcmFtZV9kaWcgLTIKICAgIGFwcF9nbG9iYWxfcHV0CiAgICBieXRlY18yIC8vICJleHBpcnlUaW1lIgogICAgZnJhbWVfZGlnIC0xCiAgICBhcHBfZ2xvYmFsX3B1dAogICAgcmV0c3ViCg==",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDEwCgpzbWFydF9jb250cmFjdHMubGltaXRfb3JkZXIuY29udHJhY3QuTGltaXRPcmRlci5jbGVhcl9zdGF0ZV9wcm9ncmFtOgogICAgcHVzaGludCAxIC8vIDEKICAgIHJldHVybgo="
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 0,
+            "num_uints": 5
+        },
+        "local": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {
+                "assetID": {
+                    "type": "uint64",
+                    "key": "assetID"
+                },
+                "expiryTime": {
+                    "type": "uint64",
+                    "key": "expiryTime"
+                },
+                "isActive": {
+                    "type": "uint64",
+                    "key": "isActive"
+                },
+                "limitPrice": {
+                    "type": "uint64",
+                    "key": "limitPrice"
+                },
+                "orderAmount": {
+                    "type": "uint64",
+                    "key": "orderAmount"
+                }
+            },
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "LimitOrder",
+        "methods": [
+            {
+                "name": "createApplication",
+                "args": [
+                    {
+                        "type": "asset",
+                        "name": "assetID"
+                    },
+                    {
+                        "type": "uint64",
+                        "name": "limitPrice"
+                    },
+                    {
+                        "type": "uint64",
+                        "name": "orderAmount"
+                    },
+                    {
+                        "type": "uint64",
+                        "name": "expiryTime"
+                    }
+                ],
+                "readonly": false,
+                "returns": {
+                    "type": "void"
+                },
+                "desc": "Create the limit order contract with specified parameters."
+            },
+            {
+                "name": "executeOrder",
+                "args": [
+                    {
+                        "type": "uint64",
+                        "name": "currentPrice"
+                    }
+                ],
+                "readonly": false,
+                "returns": {
+                    "type": "void"
+                },
+                "desc": "Execute the limit order if the price conditions are met."
+            },
+            {
+                "name": "cancelOrder",
+                "args": [],
+                "readonly": false,
+                "returns": {
+                    "type": "void"
+                },
+                "desc": "Cancel an active limit order."
+            },
+            {
+                "name": "updateOrder",
+                "args": [
+                    {
+                        "type": "uint64",
+                        "name": "newLimitPrice"
+                    },
+                    {
+                        "type": "uint64",
+                        "name": "newExpiryTime"
+                    }
+                ],
+                "readonly": false,
+                "returns": {
+                    "type": "void"
+                },
+                "desc": "Update the parameters of an active limit order."
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {}
+}
