@@ -1,4 +1,5 @@
 import logging
+import json
 
 import algokit_utils
 from algosdk.v2client.algod import AlgodClient
@@ -28,9 +29,11 @@ def deploy(
         on_schema_break=algokit_utils.OnSchemaBreak.AppendApp,
         on_update=algokit_utils.OnUpdate.AppendApp,
     )
-    name = "world"
-    response = app_client.hello(name=name)
-    logger.info(
-        f"Called hello on {app_spec.contract.name} ({app_client.app_id}) "
-        f"with name={name}, received: {response.return_value}"
-    )
+
+    data = {
+        "app_id": app_client.app_id,
+        "app_address": app_client.app_address,
+    }
+
+    with open("atom_trade_client.py", "w") as f:
+        json.dump(data, f, indent=2)
