@@ -1,43 +1,32 @@
-# Limit Order System Challenge
+# Limit Order System Challenge Solution
 
-## Challenge Overview
+## 🥅 Objective
 
 Your task is to build an **on-chain limit order system** that can interact with a decentralized exchange (DEX), specifically **Tinyman** or **Pact**, to fill its orders. This system should enable users to create limit orders that are executed when specific conditions are met, such as price or time thresholds. This foundational tool aims to enhance decentralized trading and has the potential to become a valuable product in the **Algorand DeFi landscape**. The system should be primarily decentralized, allowing orders to be filled through DEXes or by arbitrageurs, with all orders managed on-chain.
 
-### Bonus Features
-Extra points will be awarded if additional trading strategies, such as **Dollar Cost Averaging (DCA)** or **Stop-loss**, are implemented.
+## ✅ Completed Requirements
 
----
+- [x] I used **AlgoKit** for the smart contract development.
+- [x] I used **Puya** as the language for the smart contract development.
+- [x] I target **Tinyman** as the DEX to interact with via their python SDK.
 
-## Requirements
+## 🚧 In-Progress
 
-### Working Environment
-- Participants must use **AlgoKit** to build the smart contracts and/or SDKs necessary to complete the challenge.
+Due to time constraints, I was unable to deliver a fully functional system. However, I have implemented the core functionality/ logic of limit order execution, which allows users to create and execute orders. Here's what I have so far:
 
-### Challenge Tools
-- The system should utilize **Algorand-based smart contracts**.
-- While discouraged, a non-decentralized proof of concept will be accepted but will receive lower scores.
+- The smart contract **AtomTrade** allows users to register via a **register()** method.
+- On registration, the user can place an order via the **place_order()** method.
 
-### Development Languages
-- The primary development language should be **Python**, specifically the **Puya library**.
+  - The order includes the limit price, amount, asset ID, and stop price.
+  - At the time of placement, an abi call is to be made to **Tinyman** to check the current price of the asset. The current price is then compared to the limit price and stop price.
 
-### Functional Requirements
-1. **Limit Order Execution**: The system should allow users to set limit orders to buy/sell assets once the specified conditions (e.g., price limits or time limits) are met.
-2. **Automated Strategies (Optional)**: Implement optional features like:
-   - **DCA System**: Allows users to periodically buy/sell a specified asset at set intervals.
-   - **Stop-Loss Order**: Enables users to sell an asset if its price falls below a certain threshold.
+    - If the current price is lower than the limit price, the order will be filled immediately as that is a limit order.
+    - If the current price is higher than the stop price, the order will be canceled which is a stop-loss order.
 
-### Time Allotment
-- Participants have **4 days** to complete the challenge.
+  - If the order is not filled or canceled, the status of the order is initially set to "open".
 
----
+- Once the order has been placed, the offchain agent periodically calls the **exec_order()** method to ensure that the order can get the best price from the DEX.
 
-## Evaluation Criteria
+## 📌 Next Step
 
-1. **Functionality**: The limit order system must meet the outlined requirements, including executing limit orders and any optional trading strategies if implemented.
-2. **Decentralization**: Solutions that leverage smart contracts over simple SDKs are strongly preferred.
-3. **Code Quality**: Code readability, adherence to best practices, and documentation will be evaluated.
-4. **User Experience**: The system should offer simple, intuitive interactions. Although a UI is not required due to time constraints, including one will result in extra points. A **Command-Line Interface (CLI)** is sufficient, provided the commands are well documented in this README.
-5. **Test Net Proof of Concept**: The system should be deployed on a testnet, with participants encouraged to deploy ASA/ASA pools to demonstrate the system's intended functionality.
-
-**SUBMISSIONS SHOULD BE A PR FOR THIS REPO**
+As a next step, I plan to add the **exec_order()** method to the smart contract, which will be called by the offchain agent to ensure that the order can get the best price from the DEX and integrate with the **Tinyman** smart contract onchain.
