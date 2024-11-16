@@ -3,6 +3,11 @@ from algopy.arc4 import abimethod
 
 
 class AtomTrade(ARC4Contract):
-    @abimethod()
-    def hello(self, name: String) -> String:
-        return "Hello, " + name
+    def __init__(self):
+        self.name = String(16)
+        self.message = String(16)
+    
+
+
+    
+    
